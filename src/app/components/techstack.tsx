@@ -4,7 +4,7 @@ import { SectionWrapper } from './sectionwrapper';
 export const TechStack = () => {
   return (
     <SectionWrapper sectionHeading='Tech Stack'>
-      <div className='flex flex-col gap-y-2'>
+      <div className='flex flex-col gap-y-2 max-w-xs md:max-w-full'>
         <TechSkillsList skillsList={frontendSkillsList} />
         <TechSkillsList skillsList={backendSkillsList} />
       </div>
@@ -79,7 +79,7 @@ type TechSkillsListProps = {
 };
 const TechSkillsList = ({ skillsList }: TechSkillsListProps) => {
   return (
-    <div className='flex flex-row flex-wrap justify-start gap-y-2'>
+    <div className='flex flex-row flex-wrap justify-start gap-2'>
       {skillsList.map((item) => {
         const { skill, icon } = item;
         return <Skill key={skill} icon={icon} skill={skill} />;
@@ -91,9 +91,7 @@ const TechSkillsList = ({ skillsList }: TechSkillsListProps) => {
 const Skill = ({ icon, skill }: Skill) => {
   return (
     <div className='mr-4 flex flex-col items-center'>
-      <div>
-        <Image src={icon} alt={skill} className='w-10 h-10' width={60} height={60} />
-      </div>
+      <Image src={icon} alt={skill} className='w-10 h-10' width={60} height={60} />
       <div className='text-sm'>{skill}</div>
     </div>
   );

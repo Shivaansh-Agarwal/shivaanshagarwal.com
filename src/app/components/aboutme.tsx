@@ -6,7 +6,10 @@ export function AboutMe() {
   return (
     <div className='flex flex-col gap-4 md:gap-20 md:flex-row'>
       <div className='flex flex-col'>
-        <div className='bg-gradient-to-b from-orange-500 via-white to-green-500 w-72 h-72 p-2 flex justify-center items-center'>
+        <div
+          style={{ maxWidth: '250px', maxHeight: '250px' }}
+          className='bg-gradient-to-b from-orange-500 via-white to-green-500 p-2 flex justify-center items-center'
+        >
           <Image
             src='/images/shivaansh.jpg'
             alt='Profile'
@@ -18,7 +21,7 @@ export function AboutMe() {
         </div>
         <SocialMediaBar />
       </div>
-      <div className='flex flex-col max-w-xs md:max-w-lg gap-4'>
+      <div style={{ flexShrink: '2' }} className='flex flex-col max-w-xs md:max-w-lg gap-4'>
         <h1 className='font-semibold text-3xl md:text-5xl hidden md:block'>Hey, I&apos;m Shivaansh!</h1>
         <p className='mt-5 text-lg'>Welcome to my virtual home. 🏠</p>
         <p>
