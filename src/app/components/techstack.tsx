@@ -80,9 +80,9 @@ type TechSkillsListProps = {
 const TechSkillsList = ({ skillsList }: TechSkillsListProps) => {
   return (
     <div className='flex flex-row flex-wrap justify-start gap-2'>
-      {skillsList.map((item) => {
+      {skillsList.map((item, index) => {
         const { skill, icon } = item;
-        return <Skill key={skill} icon={icon} skill={skill} />;
+        return <Skill key={index} icon={icon} skill={skill} />;
       })}
     </div>
   );

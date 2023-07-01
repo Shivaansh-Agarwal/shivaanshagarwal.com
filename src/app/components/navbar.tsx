@@ -9,7 +9,7 @@ export function Navbar() {
     {
       route: '/projects',
       displayName: 'Projects',
-      activeLinkClassName: 'border-yellow-300',
+      activeLinkClassName: 'border-indigo-300',
     },
     {
       route: '/blogs',
@@ -20,14 +20,12 @@ export function Navbar() {
   return (
     <nav className='flex flex-row justify-start items-center gap-4'>
       {routesList.map(({ route, displayName, activeLinkClassName }) => {
-        const isLinkActive = pathname === route;
+        const isLinkActive = pathname.includes(route);
         return (
           <Link
             key={route}
             href={route}
-            className={`border-b-2  ${
-              isLinkActive ? `font-semibold ${activeLinkClassName}` : 'font-normal border-transparent'
-            }`}
+            className={`border-b-2  ${isLinkActive ? `${activeLinkClassName}` : 'font-normal border-transparent'}`}
           >
             {displayName}
           </Link>
